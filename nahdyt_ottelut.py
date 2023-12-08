@@ -1,17 +1,7 @@
-# usage:
-# python3 nahdyt_ottelut.py -i http://futisforum2.org/index.php?topic=<topic_id> -p <page_count>
-# e.g. python3 nahdyt_ottelut.py -i http://futisforum2.org/index.php?topic=263126 -p 4
-# dependencies:
-# install Python 3.10.4 or newer
-# python3 -m pip install bs4==0.0.1
-# python3 -m pip install requests==2.27.1
-
 from bs4 import BeautifulSoup
 from collections import OrderedDict
 import argparse
-import re
 import requests
-import sys
 
 def get_page_count(input_page):
     response = requests.get(input_page)
@@ -25,7 +15,7 @@ def get_page_count(input_page):
 
 def parse_page(input_page, i):
     page_index = i*25
-    print("parsing page " + input_page + "." + str(page_index))
+    #print("parsing page " + input_page + "." + str(page_index))
     response = requests.get(input_page + "." + str(page_index))
     soup = BeautifulSoup(response.content.decode('iso-8859-1'), 'html.parser')
 
@@ -68,12 +58,11 @@ def make_post(dict):
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-i', '--input', required=True)
-#parser.add_argument('-p', '--page_count', type=int, required=True)
 
 args = parser.parse_args()
 
 page_count = get_page_count(args.input)
-print("page count = " + str(page_count))
+#print("page count = " + str(page_count))
 
 
 full_nick_link_dict = {}

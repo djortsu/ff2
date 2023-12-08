@@ -1,0 +1,18 @@
+name: hoito alkaa
+on: workflow_dispatch
+jobs:
+  jun d-kuppi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10.4'
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v4
+        with: 
+          path: "nahdyt_ottelut_requirements.txt"
+      - name: Execute Python script
+        run: python nahdyt_ottelut.py -i http://futisforum2.org/index.php?topic=263126
