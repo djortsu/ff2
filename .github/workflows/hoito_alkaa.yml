@@ -15,7 +15,7 @@ jobs:
         with: 
           path: "nahdyt_ottelut_requirements.txt"
       - name: Execute Python script
-        run: python nahdyt_ottelut.py -i http://futisforum2.org/index.php?topic=263126 > seisoiko_se_sittenkin.txt
+        run: python nahdyt_ottelut.py -i http://futisforum2.org/index.php?topic=269927 > seisoiko_se_sittenkin.txt
       - name: Archive results
         uses: actions/upload-artifact@v3
         with:

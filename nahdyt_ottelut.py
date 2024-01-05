@@ -76,6 +76,7 @@ sorted_nick_link_dict = OrderedDict(sorted(full_nick_link_dict.items(), key=lamb
 make_post(sorted_nick_link_dict)
 print("\n" + "Foorumisteja: " + str(len(sorted_nick_link_dict)))
 print("\n" + "Vanhat:")
+print("[url=http://futisforum2.org/index.php?topic=263126.0]2023[/url]")
 print("[url=http://futisforum2.org/index.php?topic=254623.0]2022[/url]")
 print("[url=http://futisforum2.org/index.php?topic=242684.0]2021[/url]")
 print("[url=http://futisforum2.org/index.php?topic=234715.0]2020[/url]")
