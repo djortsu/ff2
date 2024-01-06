@@ -28,13 +28,13 @@ def parse_page(input_page, i):
         x2 = x1.get('title')
         if x2 is not None:
             if "Tarkastele profiilia" in x2:
-                if x1.string not in nicks:
-                    nicks.append(x1.string)
+                nicks.append(x1.string)
     for y1 in soup.find_all('div'):
         if y1.get('class') == ['saihe']:
             id = y1.get('id').split("_")[1]
             links.append(input_page.split("=")[0] + "=" + topic + ".msg" + id + "#msg" + id)
     
+    del nicks[::2]
     nick_link_dict = {nicks[i]: links[i] for i in range(len(nicks))}
 
     return nick_link_dict
@@ -69,6 +69,8 @@ full_nick_link_dict = {}
 
 for i in range(page_count):
     nick_link_dict = parse_page(args.input, i)
+    if i == 0:
+        del nick_link_dict[next(iter(nick_link_dict))]
     full_nick_link_dict.update(nick_link_dict)
 
 sorted_nick_link_dict = OrderedDict(sorted(full_nick_link_dict.items(), key=lambda x: x[0].lower()))
