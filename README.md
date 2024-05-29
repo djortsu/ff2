@@ -1,2 +1,2 @@
 # ff2
-hoito alkaa jun
+alkaako hoito
