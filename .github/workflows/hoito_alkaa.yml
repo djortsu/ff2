@@ -1,5 +1,9 @@
 name: hoito alkaa
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * 0"
+
 jobs:
   jun-d-kuppi:
     environment: FF2
