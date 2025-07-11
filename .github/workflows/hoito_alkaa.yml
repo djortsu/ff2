@@ -15,6 +15,6 @@ jobs:
         with: 
           path: "nahdyt_ottelut_requirements.txt"
       - name: Execute Python script
-        run: python nahdyt_ottelut.py
         env:
           HOT_PW: ${{ secrets.HOT_PW }}
+        run: python nahdyt_ottelut.py
