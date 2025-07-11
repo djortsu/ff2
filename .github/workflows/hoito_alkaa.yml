@@ -2,6 +2,7 @@ name: hoito alkaa
 on: workflow_dispatch
 jobs:
   jun-d-kuppi:
+    environment: FF2
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code

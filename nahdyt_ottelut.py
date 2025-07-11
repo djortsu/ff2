@@ -73,7 +73,7 @@ def post_post(input_page, msg_content, msg_num, user, passwd):
         time.sleep(1)
         r1 = s.get(input_page)
         soup1 = BeautifulSoup(r1.content.decode('iso-8859-1'), 'html.parser')
-        all_a = soup1.findAll('a')
+        all_a = soup1.find_all('a')
         edit_link = ""
         for item in all_a:
             i_href = item.get('href')
@@ -86,9 +86,9 @@ def post_post(input_page, msg_content, msg_num, user, passwd):
         time.sleep(1)
         r2 = s.get(edit_link)
         soup2 = BeautifulSoup(r2.content.decode('iso-8859-1'), 'html.parser')
-        forms = soup2.findAll('form', id='postmodify')
+        forms = soup2.find_all('form', id='postmodify')
         action_link = forms[0].get('action')
-        inputs = forms[0].findAll('input')
+        inputs = forms[0].find_all('input')
         for i in inputs:
             if i['name'] == "subject":
                 subject = i['value'].encode("ISO-8859-1")
