@@ -115,8 +115,8 @@ def post_post(input_page, msg_content, msg_num, user, passwd):
 
 #############################################################
 
-hot_topic = "https://futisforum2.org/index.php?topic=276317"
-hot_msg = "16438937"
+hot_topic = "https://futisforum2.org/index.php?topic=282555"
+hot_msg = "17139587"
 hot_user = "nahdytottelut"
 hot_pw = os.getenv("HOT_PW")
 
@@ -139,8 +139,8 @@ sorted_nick_link_dict = OrderedDict(sorted(full_nick_link_dict.items(), key=lamb
 post_content = make_post_content(sorted_nick_link_dict)
 post_content += "\n" + "Foorumisteja: " + str(len(sorted_nick_link_dict)) + "\n"
 post_content += "\n" + "Vanhat:" + "\n"
-post_content += "[url=http://futisforum2.org/index.php?topic=269927]2024[/url], [url=http://futisforum2.org/index.php?topic=263126]2023[/url], [url=http://futisforum2.org/index.php?topic=254623]2022[/url], [url=http://futisforum2.org/index.php?topic=242684]2021[/url], [url=http://futisforum2.org/index.php?topic=234715]2020[/url], [url=http://futisforum2.org/index.php?topic=224630]2019[/url], [url=http://futisforum2.org/index.php?topic=214095]2018[/url], [url=http://futisforum2.org/index.php?topic=203315]2017[/url], [url=http://futisforum2.org/index.php?topic=190345]2016[/url], [url=http://futisforum2.org/index.php?topic=178127]2015[/url], [url=http://futisforum2.org/index.php?topic=163350]2014[/url], [url=http://futisforum2.org/index.php?topic=150525]2013[/url], [url=http://futisforum2.org/index.php?topic=133276]2012[/url], [url=http://futisforum2.org/index.php?topic=114936]2011[/url], [url=http://futisforum2.org/index.php?topic=92118]2010[/url], [url=http://futisforum2.org/index.php?topic=63884]2009[/url], [url=http://futisforum2.org/index.php?topic=42920]2008[/url], [url=http://futisforum2.org/index.php?topic=10358]2007[/url], [url=http://futisforum2.org/index.php?topic=1109]2006[/url]"
-post_content += "\n" + "\n" + "Tämä postaus on generoitu skriptillä: https://github.com/djortsu/ff2/actions/workflows/hoito_alkaa.yml"
+post_content += "[url=https://futisforum2.org/index.php?topic=276317]2025[/url], [url=http://futisforum2.org/index.php?topic=269927]2024[/url], [url=http://futisforum2.org/index.php?topic=263126]2023[/url], [url=http://futisforum2.org/index.php?topic=254623]2022[/url], [url=http://futisforum2.org/index.php?topic=242684]2021[/url], [url=http://futisforum2.org/index.php?topic=234715]2020[/url], [url=http://futisforum2.org/index.php?topic=224630]2019[/url], [url=http://futisforum2.org/index.php?topic=214095]2018[/url], [url=http://futisforum2.org/index.php?topic=203315]2017[/url], [url=http://futisforum2.org/index.php?topic=190345]2016[/url], [url=http://futisforum2.org/index.php?topic=178127]2015[/url], [url=http://futisforum2.org/index.php?topic=163350]2014[/url], [url=http://futisforum2.org/index.php?topic=150525]2013[/url], [url=http://futisforum2.org/index.php?topic=133276]2012[/url], [url=http://futisforum2.org/index.php?topic=114936]2011[/url], [url=http://futisforum2.org/index.php?topic=92118]2010[/url], [url=http://futisforum2.org/index.php?topic=63884]2009[/url], [url=http://futisforum2.org/index.php?topic=42920]2008[/url], [url=http://futisforum2.org/index.php?topic=10358]2007[/url], [url=http://futisforum2.org/index.php?topic=1109]2006[/url]"
+#post_content += "\n" + "\n" + "Tämä postaus on generoitu skriptillä: https://github.com/djortsu/ff2/actions/workflows/hoito_alkaa.yml"
 
 print("Start automatic posting...")
 post_post(hot_topic, post_content, hot_msg, hot_user, hot_pw)
