@@ -9,6 +9,7 @@ def get_page_count(input_page):
     response = requests.get(input_page)
     if response.status_code != 200:
         print("NYT YLLAPITO PAIKALLE! OLENKO ULKOMAILLA?")
+        print(f"response.status_code: {response.status_code}")
         sys.exit(1)
     soup = BeautifulSoup(response.content.decode('iso-8859-1'), 'html.parser')
     for y1 in soup.find_all('div', class_='middletext wordspacing'):
